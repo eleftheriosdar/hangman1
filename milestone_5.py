@@ -57,15 +57,13 @@ class Hangman():
             elif self.num_letters > 0 :
                 hangman.ask_for_input()
                 break
-            elif self.num_lives != 0 and num_letters <= 0:
+            elif self.num_lives != 0 and self.num_letters <= 0:
                 print("Congrats you won!")
                 print("The word is {self.word_guessed} " )
                 break
                  
 
 
-
-
 hangman = Hangman(["banana"], 5)
-hangman.play_game(self.word)
+hangman.play_game(word_list)
             
