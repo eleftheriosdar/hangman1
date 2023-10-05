@@ -24,7 +24,7 @@ class Hangman():
             for index, letter in enumerate(self.word):
                 if letter in guess:
                     self.word_guessed[index] = letter
-                self.num_letters -=1
+            self.num_letters -=1
             print("Yes letter {} is in the word".format(guess))
             print("Your word so far : {} ".format(self.word_guessed))
         else:
@@ -45,24 +45,23 @@ class Hangman():
             else:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
+                break
         
 
     def play_game(self):
-        game = Hangman(self.word_list, num_lives=5)
         while True:
             if self.num_lives == 0:
                 print("You lost")
-                print("The word is {self.word_guessed} " )
+                print("The word is {} ".format(self.word) )
                 break
             elif self.num_letters > 0 :
-                hangman.ask_for_input()
-                break
-            elif self.num_lives != 0 and self.num_letters <= 0:
+                self.ask_for_input()
+            elif self.num_lives != 0 and self.num_letters == 0:
                 print("Congrats you won!")
-                print("The word is {self.word_guessed} " )
+                print("The word is {} ".format(self.word_guessed) )
                 break
                  
 
-hangman = Hangman(["banana"], 5)
+hangman = Hangman(["banana", "apple", "grapes"], 5)
 hangman.play_game()
 
