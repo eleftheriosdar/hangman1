@@ -14,7 +14,8 @@ def ask_for_input ():
             break
         else:
             print("Invalid letter. Please, enter a single alphabetical character.  ")
-            guess = input("Enter a single letter   ")
+ 
+           guess = input("Enter a single letter   ")
             
 
 
@@ -26,6 +27,5 @@ def check_guess(guess):
     else:
         print("Sorry, {}  is not in the word, Try again!".format(guess))
         return guess
-
-
+    
 ask_for_input()

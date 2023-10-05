@@ -22,11 +22,13 @@ class Hangman():
         if guess in list(self.word):
             print("Good guess!  {} is in the word".format(guess))
             for index, letter in enumerate(self.word):
+                #TODO I need to use a different operator because guess is not going to be equal to the guessing word
                 if letter in guess:
                     self.word_guessed[index] = letter
                 self.num_letters -=1
-            print("Yes letter {} is in the word".format(guess))
-            print("Your word so far : {} ".format(self.word_guessed))
+        print("Yes letter {} is in the word".format(guess))
+        print("Your word so far : {} ".format(self.word_guessed))
+  
         else:
             self.num_lives -=1
             print("Sorry, {}  is not in the word, Try again!".format(guess))
@@ -45,7 +47,13 @@ class Hangman():
             else:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
+                print(self.word_guessed)
+            
+    def play_game(self, word_list):
+        self.game = Hangman(word_list, num_lives=5)
         
 
-hangman = Hangman(["banana"], 5)
+
+
+hangman = Hangman(["banana"])
 hangman.ask_for_input()
